@@ -1,0 +1,17 @@
+# Directories to ignore
+uploads/
+venv/
+env/
+__pycache__/
+
+# File types to ignore
+*.mp4
+*.wav
+*.pyc
+*.log
+.env
+
+# Specific files to include (if they would otherwise be ignored by a general rule)
+!requirements.txt
+!GEMINI.md
+!errores.txt

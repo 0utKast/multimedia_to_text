@@ -1,0 +1,31 @@
+PS C:\proyectos_python\mp4Text> python app.py
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [26/Aug/2025 09:54:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 09:54:15] "GET /static/style.css HTTP/1.1" 304 -
+DEBUG: File saved temporarily to uploads\173d6a3b-2ccf-4b41-b290-70d806ee60ad.m4a
+DEBUG: Input is audio (.m4a), proceeding directly to whisper.
+DEBUG: Starting whisper process...
+[2025-08-26 09:54:26,405] ERROR in app: Exception on /upload [POST]
+Traceback (most recent call last):
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\proyectos_python\mp4Text\app.py", line 101, in upload_file
+    return jsonify({'task_id': task_id, 'status': 'processing_started'}), 202
+           ^^^^^^^
+NameError: name 'jsonify' is not defined
+127.0.0.1 - - [26/Aug/2025 09:54:26] "POST /upload HTTP/1.1" 500 -
+Consola FrontEnde:
+Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)
+Navegador:
+Error de red: Unexpected token '<', "<!doctype "... is not valid JSON
