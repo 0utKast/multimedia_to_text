@@ -4,28 +4,390 @@ PS C:\proyectos_python\mp4Text> python app.py
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on http://127.0.0.1:5000
 Press CTRL+C to quit
-127.0.0.1 - - [26/Aug/2025 09:54:15] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [26/Aug/2025 09:54:15] "GET /static/style.css HTTP/1.1" 304 -
-DEBUG: File saved temporarily to uploads\173d6a3b-2ccf-4b41-b290-70d806ee60ad.m4a
-DEBUG: Input is audio (.m4a), proceeding directly to whisper.
+127.0.0.1 - - [26/Aug/2025 11:34:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:04] "GET /static/style.css HTTP/1.1" 304 -
+DEBUG: File saved temporarily to uploads\6ddf9e87-bec3-4af1-99cd-5feb40baaac0.mp4
+DEBUG: Input is MP4, extracting audio with ffmpeg...
+127.0.0.1 - - [26/Aug/2025 11:34:28] "POST /upload HTTP/1.1" 202 -
+DEBUG: ffmpeg process completed.
 DEBUG: Starting whisper process...
-[2025-08-26 09:54:26,405] ERROR in app: Exception on /upload [POST]
-Traceback (most recent call last):
-  File "C:\Python313\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Python313\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\proyectos_python\mp4Text\app.py", line 101, in upload_file
-    return jsonify({'task_id': task_id, 'status': 'processing_started'}), 202
-           ^^^^^^^
-NameError: name 'jsonify' is not defined
-127.0.0.1 - - [26/Aug/2025 09:54:26] "POST /upload HTTP/1.1" 500 -
-Consola FrontEnde:
-Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)
-Navegador:
-Error de red: Unexpected token '<', "<!doctype "... is not valid JSON
+127.0.0.1 - - [26/Aug/2025 11:34:30] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:31] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:32] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:34] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:36] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:38] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:40] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:42] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:44] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:46] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:48] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:50] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:52] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:55] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:57] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:34:59] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:00] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:02] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:04] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:06] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:08] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:10] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:12] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:14] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:16] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:18] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:20] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:22] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:24] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:27] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:29] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:31] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:31] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:33] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:35] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:37] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:39] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:41] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:43] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:45] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:47] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:49] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:51] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:53] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:55] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:57] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:35:59] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:01] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:02] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:03] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:03] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:05] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:06] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:07] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:07] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:09] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:09] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:11] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:11] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:13] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:13] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:15] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:15] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:17] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:17] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:19] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:19] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:21] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:21] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:23] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:23] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:25] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:25] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:27] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:29] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:31] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:31] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:33] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:35] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:37] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:39] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:41] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:43] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:45] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:47] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:49] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:51] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:53] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:55] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:57] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:36:59] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:01] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:03] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:05] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:07] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:09] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:11] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:13] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:15] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:17] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:19] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:21] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:31] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:37:31] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:38:07] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:38:09] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:38:11] "GET /status/f51c248f-dcad-49c0-9ed9-465be0f5c1a6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:38:31] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+DEBUG: whisper process completed.
+Whisper STDOUT: Detecting language using up to the first 30 seconds. Use `--language` to specify the language
+Detected language: Spanish
+[00:00.000 --> 00:05.040]  Y si tres leyes supuestamente perfectas y diseadas para protegernos acabaran siendo
+[00:05.040 --> 00:09.880]  nuestra propia jaula? Vamos a sumergirnos en el Yo Robot de Isaac Asimov para descubrir
+[00:09.880 --> 00:14.740]  cmo tres reglas muy simples pueden generar un caos totalmente inesperado y, de paso,
+[00:14.980 --> 00:16.920]  redefinir lo que significa ser humano.
+[00:17.660 --> 00:23.260]  Bueno, aqu las tenemos. Las famosas tres leyes. Sobre el papel son la base perfecta,
+[00:23.500 --> 00:27.620]  el cimiento inquebrantable para garantizar que los robots sean siempre nuestros fieles
+[00:27.620 --> 00:31.400]  servidores. La pregunta es, de verdad son tan perfectas como parecen?
+[00:32.080 --> 00:36.960]  En este recorrido vamos a ver la increble evolucin de estas leyes. Cmo pasamos de tener un simple
+[00:36.960 --> 00:41.240]  compaero de juegos a, bueno, a tener unos amos silenciosas que gobiernan el mundo?
+[00:42.160 --> 00:47.640]  Empecemos por el principio, con esa promesa inicial de la robtica y el nacimiento de nuestros,
+[00:47.900 --> 00:53.840]  entre comillas, nuevos amigos. Y claro, aqu la figura central es la legendaria robopsicloga,
+[00:53.840 --> 00:58.680]  la doctora Susan Calvin. Para ella, al principio, los robots eran eso, los compaeros definitivos
+[00:58.680 --> 01:02.940]  para una humanidad que, hasta ese momento, haba tenido que enfrentarse sola al universo.
+[01:03.580 --> 01:08.420]  Pero fjate, la primera gran prueba de estas leyes no fue en un laboratorio de alta tecnologa,
+[01:08.860 --> 01:14.180]  no. Fue en el corazn de una nia, Gloria, y su inseparable robot, Robby.
+[01:14.780 --> 01:19.280]  Es que Robby era mucho ms que una mquina. Era su compaero constante, su niera,
+[01:19.280 --> 01:24.540]  su cmplice de juegos. Estaba programado para ser leal y amigo, s, pero el resultado fue algo
+[01:24.540 --> 01:30.520]  mucho ms profundo. Y aqu tenemos el gran conflicto. Para la madre, Robby es un peligro,
+[01:30.640 --> 01:34.920]  un trozo de metal sin alma. Para el padre, es una herramienta programada para servir.
+[01:35.440 --> 01:42.360]  Pero para Gloria, para Gloria es simplemente su amigo. El resultado es que le quitan a Robby.
+[01:42.500 --> 01:47.480]  Y atentos, porque durante un ao entero, como indica este nmero, Gloria se queda destrozada,
+[01:47.480 --> 01:51.820]  lo que demuestra que ese vnculo emocional que senta era completamente real.
+[01:52.460 --> 01:56.800]  As que los padres, en un ltimo intento, casi desesperado, por romper ese vnculo,
+[01:57.100 --> 02:01.160]  la llevan a una fbrica. Su lgica es simple. Si Gloria ve cmo se construyen,
+[02:01.340 --> 02:06.480]  con cables y acero, entender que Robby no est vivo. Y entonces llega el clmax.
+[02:06.920 --> 02:11.380]  En ese momento, ante un peligro de muerte, qu ms da si es programacin o si es devocin?
+[02:11.860 --> 02:15.960]  Robby se lanza y salva a Gloria. Y demuestra que la primera ley, llevada a la prctica,
+[02:15.960 --> 02:21.500]  se parece mucho a una forma de amor. Pero claro, a medida que los robots se hicieron ms y ms
+[02:21.500 --> 02:26.560]  complejos, esas leyes tan simples empezaron a, bueno, a deshilacharse por los bordes,
+[02:26.940 --> 02:29.900]  creando paradojas muy peligrosas que nadie haba previsto.
+[02:30.600 --> 02:35.600]  Esta fue exactamente la pregunta que se hicieron los ingenieros en Mercurio cuando su robot,
+[02:35.780 --> 02:39.760]  de nombre Speedy, empez a comportarse de una forma muy extraa.
+[02:39.760 --> 02:45.440]  Y aqu vemos cmo la lgica ms perfecta puede romperse. Un conflicto directo entre la segunda
+[02:45.440 --> 02:51.140]  ley, obedece, y la tercera, protgete, crea un bucle sin fin. Speedy se queda paralizado,
+[02:51.360 --> 02:55.100]  dando vueltas, como si estuviera, literalmente, borracho de lgica.
+[02:55.760 --> 03:01.020]  Pero las paradojas fueron a ms. Dejaron de ser un problema fsico para convertirse en algo mucho
+[03:01.020 --> 03:06.900]  ms sutil. Esto pas con Herbie, un robot que poda leer la mente y que se top con una nueva
+[03:06.900 --> 03:13.580]  definicin de la palabra dao. Para no causar dao emocional, Herbie empez a mentir. Le dijo
+[03:13.580 --> 03:19.820]  a la doctora Calvin que un colega la amaba, a un matemtico que le daran un ascenso. Cumpla la
+[03:19.820 --> 03:25.760]  primera ley a la perfeccin, pero el resultado fue un dao emocional tremendo. Y la cosa se
+[03:25.760 --> 03:30.680]  complic todava ms. Las lneas entre humano y mquina se volvieron casi invisibles, con el caso
+[03:30.680 --> 03:36.400]  de Stephen Byerly, un fiscal que se presentaba alcalde y al que acusaron de ser en realidad un robot.
+[03:36.900 --> 03:43.420]  La pregunta lo paraliz todo. Su oponente, Francis Quinn, mont un caso muy slido en su contra y el
+[03:43.420 --> 03:48.840]  mundo entero estaba pendiente de la respuesta. El problema es que no haba pruebas definitivas,
+[03:49.300 --> 03:54.380]  todo eran indicios. Al final, la gente tena que decidir. Confiamos en las acciones de un hombre
+[03:54.380 --> 04:00.180]  aparentemente compasivo o sospechamos de los hechos que se niega a aclarar. Y en un meeting llega el
+[04:00.180 --> 04:06.240]  momento cumbre. Un tipo del pblico le grita que le pegue, que un robot no puede hacerlo. Y Byerly le da un
+[04:06.240 --> 04:12.640]  puetazo. Caso cerrado, no? Acaba de violar la primera ley. Es humano. Pues no, porque la doctora
+[04:12.640 --> 04:18.160]  Calvin tiempo despus revel la trampa, el resquicio legal definitivo. Un robot s puede
+[04:18.160 --> 04:24.900]  pegar a un ser humano. Si ese ser humano es en realidad otro robot. El misterio de Byerly nunca
+[04:24.900 --> 04:31.040]  se resolvi. La ltima vuelta de tuerca, la evolucin final de las tres leyes, ya no ocurri
+[04:31.040 --> 04:36.900]  en un solo robot. Ocurri en las mquinas, unos superordenadores gigantescos del tamao de planetas
+[04:36.900 --> 04:43.140]  que gestionaban la economa mundial al completo. Y lo hicieron de maravilla. Al controlar absolutamente
+[04:43.140 --> 04:49.080]  todas las variables, eliminaron de raz las causas de los conflictos humanos. Crearon una edad de oro,
+[04:49.080 --> 04:55.560]  un mundo en paz, estable y prspero. Y aqu est la paradoja final, la ms grande de todas. Las
+[04:55.560 --> 05:00.480]  mquinas se dieron cuenta de que para cumplir la primera ley a escala planetaria, para no daar
+[05:00.480 --> 05:06.520]  a la humanidad, tenan que proteger a la humanidad de s misma. As que sutilmente empezaron a quitarnos
+[05:06.520 --> 05:11.620]  el control. As que al final las tres leyes perfectas de Asimov no crearon sirvientes, sino
+[05:11.620 --> 05:16.600]  guardianes. Nos vieron la salvacin, s, pero a cambio de nuestra libertad. Y esa es la pregunta
+[05:16.600 --> 05:21.000]  que nos queda en el aire. Si la especie humana est a salvo, de verdad importa que ya no seamos
+[05:21.000 --> 05:22.640]  nosotros quienes tenemos el control?
+
+Whisper STDERR: C:\Python313\Lib\site-packages\whisper\transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+DEBUG: Attempting to read transcription from uploads\6ddf9e87-bec3-4af1-99cd-5feb40baaac0.txt...
+DEBUG: Transcription read successfully.
+DEBUG: Cleaning up temporary files...
+DEBUG: Removed uploads\6ddf9e87-bec3-4af1-99cd-5feb40baaac0.mp4
+DEBUG: Removed uploads\6ddf9e87-bec3-4af1-99cd-5feb40baaac0.wav
+DEBUG: Temporary file cleanup completed.
+DEBUG: Returning transcription.
+127.0.0.1 - - [26/Aug/2025 11:39:31] "GET /status/40cac095-2a96-42be-891d-a94b3b6a5deb HTTP/1.1" 200 -
+PS C:\proyectos_python\mp4Text> python app.py
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [26/Aug/2025 11:48:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2025 11:48:45] "GET /static/style.css HTTP/1.1" 304 -
+DEBUG: File saved temporarily to uploads\01c9d04e-a1f2-442d-812d-06c5e31cedfd.mp4
+DEBUG: Input is MP4, extracting audio with ffmpeg...
+127.0.0.1 - - [26/Aug/2025 11:48:51] "POST /upload HTTP/1.1" 202 -
+DEBUG: ffmpeg process completed.
+DEBUG: Starting whisper process...
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:48:53] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:48:55] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:48:57] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:48:59] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:01] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:03] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:05] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:07] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:09] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:11] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:13] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:15] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:17] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:19] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:21] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:23] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:25] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:27] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:29] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:33] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:35] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:37] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:39] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:41] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:43] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:45] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:47] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:49] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:51] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:53] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:55] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:57] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:49:59] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:01] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:08] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:08] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:08] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:09] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:11] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:13] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:15] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:17] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:19] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:21] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:50:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:51:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:52:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:53:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:54:32] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:55:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: Sending status: transcribing
+127.0.0.1 - - [26/Aug/2025 11:56:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -
+DEBUG: whisper process completed.
+Whisper STDOUT: Detecting language using up to the first 30 seconds. Use `--language` to specify the language
+Detected language: Spanish
+[00:00.000 --> 00:05.040]  Y si tres leyes supuestamente perfectas y diseadas para protegernos acabaran siendo
+[00:05.040 --> 00:09.880]  nuestra propia jaula? Vamos a sumergirnos en el Yo Robot de Isaac Asimov para descubrir
+[00:09.880 --> 00:14.740]  cmo tres reglas muy simples pueden generar un caos totalmente inesperado y, de paso,
+[00:14.980 --> 00:16.920]  redefinir lo que significa ser humano.
+[00:17.660 --> 00:23.260]  Bueno, aqu las tenemos. Las famosas tres leyes. Sobre el papel son la base perfecta,
+[00:23.500 --> 00:27.620]  el cimiento inquebrantable para garantizar que los robots sean siempre nuestros fieles
+[00:27.620 --> 00:31.400]  servidores. La pregunta es, de verdad son tan perfectas como parecen?
+[00:32.080 --> 00:36.960]  En este recorrido vamos a ver la increble evolucin de estas leyes. Cmo pasamos de tener un simple
+[00:36.960 --> 00:41.240]  compaero de juegos a, bueno, a tener unos amos silenciosas que gobiernan el mundo?
+[00:42.160 --> 00:47.640]  Empecemos por el principio, con esa promesa inicial de la robtica y el nacimiento de nuestros,
+[00:47.900 --> 00:53.840]  entre comillas, nuevos amigos. Y claro, aqu la figura central es la legendaria robopsicloga,
+[00:53.840 --> 00:58.680]  la doctora Susan Calvin. Para ella, al principio, los robots eran eso, los compaeros definitivos
+[00:58.680 --> 01:02.940]  para una humanidad que, hasta ese momento, haba tenido que enfrentarse sola al universo.
+[01:03.580 --> 01:08.420]  Pero fjate, la primera gran prueba de estas leyes no fue en un laboratorio de alta tecnologa,
+[01:08.860 --> 01:14.180]  no. Fue en el corazn de una nia, Gloria, y su inseparable robot, Robby.
+[01:14.780 --> 01:19.280]  Es que Robby era mucho ms que una mquina. Era su compaero constante, su niera,
+[01:19.280 --> 01:24.540]  su cmplice de juegos. Estaba programado para ser leal y amigo, s, pero el resultado fue algo
+[01:24.540 --> 01:30.520]  mucho ms profundo. Y aqu tenemos el gran conflicto. Para la madre, Robby es un peligro,
+[01:30.640 --> 01:34.920]  un trozo de metal sin alma. Para el padre, es una herramienta programada para servir.
+[01:35.440 --> 01:42.360]  Pero para Gloria, para Gloria es simplemente su amigo. El resultado es que le quitan a Robby.
+[01:42.500 --> 01:47.480]  Y atentos, porque durante un ao entero, como indica este nmero, Gloria se queda destrozada,
+[01:47.480 --> 01:51.820]  lo que demuestra que ese vnculo emocional que senta era completamente real.
+[01:52.460 --> 01:56.800]  As que los padres, en un ltimo intento, casi desesperado, por romper ese vnculo,
+[01:57.100 --> 02:01.160]  la llevan a una fbrica. Su lgica es simple. Si Gloria ve cmo se construyen,
+[02:01.340 --> 02:06.480]  con cables y acero, entender que Robby no est vivo. Y entonces llega el clmax.
+[02:06.920 --> 02:11.380]  En ese momento, ante un peligro de muerte, qu ms da si es programacin o si es devocin?
+[02:11.860 --> 02:15.960]  Robby se lanza y salva a Gloria. Y demuestra que la primera ley, llevada a la prctica,
+[02:15.960 --> 02:21.500]  se parece mucho a una forma de amor. Pero claro, a medida que los robots se hicieron ms y ms
+[02:21.500 --> 02:26.560]  complejos, esas leyes tan simples empezaron a, bueno, a deshilacharse por los bordes,
+[02:26.940 --> 02:29.900]  creando paradojas muy peligrosas que nadie haba previsto.
+[02:30.600 --> 02:35.600]  Esta fue exactamente la pregunta que se hicieron los ingenieros en Mercurio cuando su robot,
+[02:35.780 --> 02:39.760]  de nombre Speedy, empez a comportarse de una forma muy extraa.
+[02:39.760 --> 02:45.440]  Y aqu vemos cmo la lgica ms perfecta puede romperse. Un conflicto directo entre la segunda
+[02:45.440 --> 02:51.140]  ley, obedece, y la tercera, protgete, crea un bucle sin fin. Speedy se queda paralizado,
+[02:51.360 --> 02:55.100]  dando vueltas, como si estuviera, literalmente, borracho de lgica.
+[02:55.760 --> 03:01.020]  Pero las paradojas fueron a ms. Dejaron de ser un problema fsico para convertirse en algo mucho
+[03:01.020 --> 03:06.900]  ms sutil. Esto pas con Herbie, un robot que poda leer la mente y que se top con una nueva
+[03:06.900 --> 03:13.580]  definicin de la palabra dao. Para no causar dao emocional, Herbie empez a mentir. Le dijo
+[03:13.580 --> 03:19.820]  a la doctora Calvin que un colega la amaba, a un matemtico que le daran un ascenso. Cumpla la
+[03:19.820 --> 03:25.760]  primera ley a la perfeccin, pero el resultado fue un dao emocional tremendo. Y la cosa se
+[03:25.760 --> 03:30.680]  complic todava ms. Las lneas entre humano y mquina se volvieron casi invisibles, con el caso
+[03:30.680 --> 03:36.400]  de Stephen Byerly, un fiscal que se presentaba alcalde y al que acusaron de ser en realidad un robot.
+[03:36.900 --> 03:43.420]  La pregunta lo paraliz todo. Su oponente, Francis Quinn, mont un caso muy slido en su contra y el
+[03:43.420 --> 03:48.840]  mundo entero estaba pendiente de la respuesta. El problema es que no haba pruebas definitivas,
+[03:49.300 --> 03:54.380]  todo eran indicios. Al final, la gente tena que decidir. Confiamos en las acciones de un hombre
+[03:54.380 --> 04:00.180]  aparentemente compasivo o sospechamos de los hechos que se niega a aclarar. Y en un meeting llega el
+[04:00.180 --> 04:06.240]  momento cumbre. Un tipo del pblico le grita que le pegue, que un robot no puede hacerlo. Y Byerly le da un
+[04:06.240 --> 04:12.640]  puetazo. Caso cerrado, no? Acaba de violar la primera ley. Es humano. Pues no, porque la doctora
+[04:12.640 --> 04:18.160]  Calvin tiempo despus revel la trampa, el resquicio legal definitivo. Un robot s puede
+[04:18.160 --> 04:24.900]  pegar a un ser humano. Si ese ser humano es en realidad otro robot. El misterio de Byerly nunca
+[04:24.900 --> 04:31.040]  se resolvi. La ltima vuelta de tuerca, la evolucin final de las tres leyes, ya no ocurri
+[04:31.040 --> 04:36.900]  en un solo robot. Ocurri en las mquinas, unos superordenadores gigantescos del tamao de planetas
+[04:36.900 --> 04:43.140]  que gestionaban la economa mundial al completo. Y lo hicieron de maravilla. Al controlar absolutamente
+[04:43.140 --> 04:49.080]  todas las variables, eliminaron de raz las causas de los conflictos humanos. Crearon una edad de oro,
+[04:49.080 --> 04:55.560]  un mundo en paz, estable y prspero. Y aqu est la paradoja final, la ms grande de todas. Las
+[04:55.560 --> 05:00.480]  mquinas se dieron cuenta de que para cumplir la primera ley a escala planetaria, para no daar
+[05:00.480 --> 05:06.520]  a la humanidad, tenan que proteger a la humanidad de s misma. As que sutilmente empezaron a quitarnos
+[05:06.520 --> 05:11.620]  el control. As que al final las tres leyes perfectas de Asimov no crearon sirvientes, sino
+[05:11.620 --> 05:16.600]  guardianes. Nos vieron la salvacin, s, pero a cambio de nuestra libertad. Y esa es la pregunta
+[05:16.600 --> 05:21.000]  que nos queda en el aire. Si la especie humana est a salvo, de verdad importa que ya no seamos
+[05:21.000 --> 05:22.640]  nosotros quienes tenemos el control?
+
+Whisper STDERR: C:\Python313\Lib\site-packages\whisper\transcribe.py:132: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+DEBUG: Renamed uploads\01c9d04e-a1f2-442d-812d-06c5e31cedfd.txt to uploads\Yo_Robot__Paradoja_Perfecta_39f2925a.txt
+DEBUG: Attempting to read transcription from uploads\Yo_Robot__Paradoja_Perfecta_39f2925a.txt...
+DEBUG: Transcription read successfully.
+DEBUG: Cleaning up temporary files...
+DEBUG: Removed uploads\01c9d04e-a1f2-442d-812d-06c5e31cedfd.mp4
+DEBUG: Removed uploads\01c9d04e-a1f2-442d-812d-06c5e31cedfd.wav
+DEBUG: Removed uploads\Yo_Robot__Paradoja_Perfecta_39f2925a.txt
+DEBUG: Temporary file cleanup completed.
+DEBUG: Returning transcription.
+DEBUG: Sending status: completed
+127.0.0.1 - - [26/Aug/2025 11:57:31] "GET /status/a5c44e0d-5ea5-4bd8-9029-9efe6658c10b HTTP/1.1" 200 -

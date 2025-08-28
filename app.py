@@ -61,6 +61,7 @@ def index():
 @app.route('/status/<task_id>')
 def get_status(task_id):
     status = task_statuses.get(task_id, {'status': 'unknown', 'transcription': None, 'error': None})
+    print(f"DEBUG: Sending status: {status['status']}")
     return jsonify(status)
 
 @app.route('/upload', methods=['POST'])
@@ -96,11 +97,11 @@ def upload_file():
         print(f"DEBUG: File saved temporarily to {temp_input_file_path}")
 
         # Run the transcription in a separate thread to avoid blocking the main Flask thread
-        threading.Thread(target=process_file_for_transcription, args=(temp_input_file_path, file_extension, task_id)).start()
+        threading.Thread(target=process_file_for_transcription, args=(temp_input_file_path, file_extension, task_id, original_filename)).start()
 
         return jsonify({'task_id': task_id, 'status': 'processing_started'}), 202
 
-def process_file_for_transcription(input_file_path, file_extension, task_id):
+def process_file_for_transcription(input_file_path, file_extension, task_id, original_filename):
     # This function will contain the original logic of upload_file, but will update task_statuses
     # and handle file operations. It will not return HTTP responses directly.
     # txt_path and wav_path need to be derived from the input_file_path
@@ -111,11 +112,16 @@ def process_file_for_transcription(input_file_path, file_extension, task_id):
 
     # Use sanitized original filename + a portion of UUID for TXT output to ensure uniqueness
     base_filename_for_txt = f"{sanitized_original_filename}_{str(uuid.uuid4())[:8]}"
-    txt_path = os.path.join(app.config['UPLOAD_FOLDER'], base_filename_for_txt + '.txt')
+
+    # Use sanitized original filename + a portion of UUID for TXT output to ensure uniqueness
+    
+    base_filename = os.path.splitext(os.path.basename(input_file_path))[0]
     wav_path = os.path.join(app.config['UPLOAD_FOLDER'], base_filename + '.wav') # Path for extracted WAV if needed
 
     # Initialize audio_input_path
     audio_input_path = input_file_path
+    txt_path = os.path.join(app.config['UPLOAD_FOLDER'], os.path.splitext(os.path.basename(audio_input_path))[0] + '.txt')
+    txt_path_final = os.path.join(app.config['UPLOAD_FOLDER'], base_filename_for_txt + '.txt')
 
     try:
         task_statuses[task_id]['status'] = 'file_saved' # Already saved in main thread
@@ -168,6 +174,10 @@ def process_file_for_transcription(input_file_path, file_extension, task_id):
             print(f"Whisper STDOUT: {whisper_process.stdout.decode(errors='ignore')}")
             print(f"Whisper STDERR: {whisper_process.stderr.decode(errors='ignore')}")
             task_statuses[task_id]['status'] = 'transcription_completed'
+            # Rename the generated .txt file to the desired personalized name
+            if os.path.exists(txt_path):
+                os.rename(txt_path, txt_path_final)
+                print(f"DEBUG: Renamed {txt_path} to {txt_path_final}")
         except subprocess.TimeoutExpired:
             print("DEBUG: whisper timeout.")
             task_statuses[task_id]['status'] = 'error'
@@ -181,10 +191,10 @@ def process_file_for_transcription(input_file_path, file_extension, task_id):
             return
 
         # Read the transcribed text
-        print(f"DEBUG: Attempting to read transcription from {txt_path}...")
+        print(f"DEBUG: Attempting to read transcription from {txt_path_final}...")
         task_statuses[task_id]['status'] = 'reading_transcription'
         try:
-            with open(txt_path, 'r', encoding='utf-8') as f:
+            with open(txt_path_final, 'r', encoding='utf-8') as f:
                 transcription = f.read()
             print("DEBUG: Transcription read successfully.")
             task_statuses[task_id]['transcription'] = transcription

@@ -10,8 +10,8 @@ __pycache__/
 *.pyc
 *.log
 .env
+errores.txt
 
 # Specific files to include (if they would otherwise be ignored by a general rule)
 !requirements.txt
 !GEMINI.md
-!errores.txt
